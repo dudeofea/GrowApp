@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/api/hello', (req, res) => {
-  res.send({'Hello From Express' });
+  res.send('Hello From Express');
 });
 
 function get_table(table_name, res){
