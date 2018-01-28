@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import env from '../../../../env_config.json';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:5000/api/hello')
+    fetch(env.backendHostname + '/api/hello')
       .then(res => this.state.response = res.json().express)
       .catch(err => console.log(err));
   }
