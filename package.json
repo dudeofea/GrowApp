@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "express": "^4.16.2",
-    "nodemon": "^1.14.11"
+    "nodemon": "^1.14.11",
+    "serialport": "^6.0.4",
+    "sqlite3": "^3.1.13"
   },
   "devDependencies": {
     "concurrently": "^3.5.0"

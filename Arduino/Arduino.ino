@@ -6,29 +6,26 @@
 
 DHT dht(DHT_SENSOR_PIN, DHT22);
 
-int output_value;
-
 void setup() {
   pinMode(VALVE_PIN, OUTPUT);
-  Serial.begin(9600);
-  Serial.println("Reading From the Sensor ...");
-  delay(2000);
+  Serial.begin(115200);
+  delay(4000);
 }
 
 void loop() {
-  Serial.print("Mositure : ");
-  Serial.print(get_soil_moisture());
-  Serial.println("%");
-  Serial.print("Humidity: ");
-  Serial.print(get_air_moisture());
-  Serial.print(" %, Temp: ");
-  Serial.print(get_air_temperature());
-  Serial.println(" Celsius");
-  if(get_soil_moisture() < 50){
+  //0: do nothing, 1: open valve, 2: close valve
+  long cmd = Serial.parseInt();
+  if(cmd == 1){
     open_valve();
-  }else{
+  }else if(cmd == 2){
     close_valve();
   }
+  //then return data as a result
+  Serial.print(get_soil_moisture());
+  Serial.print(",");
+  Serial.print(get_air_moisture());
+  Serial.print(",");
+  Serial.println(get_air_temperature());
   delay(2000);
 }
 
