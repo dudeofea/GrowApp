@@ -1,0 +1,7 @@
+{
+  "name": "Dashboard",
+  "version": "0.0.0",
+  "private": true,
+  "proxy": "http://localhost:5000/",
+  "main": "./Dashboard.js"
+}
