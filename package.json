@@ -4,7 +4,8 @@
   "scripts": {
     "client": "cd frontend && npm start",
     "server": "cd backend && ../node_modules/nodemon/bin/nodemon.js server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "dist": "cd frontend && npm run dist"
   },
   "dependencies": {
     "express": "^4.16.2",
