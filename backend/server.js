@@ -33,6 +33,7 @@ app.get('/api/pots', (req, res) => {
 	get_table("pots", res);
 });
 
+//valve api endpoints
 app.get('/api/valve/open', (req, res) => {
 	open_valve();
 	res.send("done");
@@ -40,6 +41,20 @@ app.get('/api/valve/open', (req, res) => {
 app.get('/api/valve/close', (req, res) => {
 	close_valve();
 	res.send("done");
+});
+
+//sensor api endpoints
+var soil_moisture = 0;
+var air_humidity = 0;
+var temperature = 0;
+app.get('/api/sensor/soil_moisture', (req, res) => {
+	res.send(String(soil_moisture));
+});
+app.get('/api/sensor/air_humidity', (req, res) => {
+	res.send(String(air_humidity));
+});
+app.get('/api/sensor/temperature', (req, res) => {
+	res.send(String(temperature));
 });
 
 app.listen(port, () => console.log(`Express backend listening on port ${port}`));
@@ -83,7 +98,10 @@ serialport.on('open', function(){
 	  buf += data;
 	  if(data.length > 0 && data[data.length-1] == "\n"){
 		  //log the data
-		  console.log(buf);
+		  var values = buf.trim().split(",");
+		  soil_moisture = parseInt(values[0]);
+		  air_humidity = parseFloat(values[1]);
+		  temperature = parseFloat(values[2]);
 		  buf = "";
 	  }
   });
