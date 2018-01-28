@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import env from '../../../../env_config.json';
+
+import Api from './../../components/Api/'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -9,16 +10,10 @@ class Dashboard extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch(env.backendHostname + '/api/hello')
-      .then(res => this.state.response = res.json().express)
-      .catch(err => console.log(err));
-  }
-
   render() {
     return (
       <div className="animated fadeIn">
-        {this.state.response}
+        Hi. <Api url="/hello"/>
       </div>
     )
   }

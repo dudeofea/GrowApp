@@ -1,5 +1,7 @@
 const routes = {
   '/': 'Home',
-  '/dashboard': 'Dashboard'
+  '/dashboard': 'Dashboard',
+  '/valveclose': 'ValveClose',
+  '/valveopen': 'ValveOpen',
 };
 export default routes;

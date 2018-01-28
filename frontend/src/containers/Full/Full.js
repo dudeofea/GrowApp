@@ -8,6 +8,8 @@ import Aside from '../../components/Aside/';
 import Footer from '../../components/Footer/';
 
 import Dashboard from '../../views/Dashboard/';
+import ValveOpen from '../../views/ValveOpen/';
+import ValveClose from '../../views/ValveClose/';
 
 class Full extends Component {
   render() {
@@ -21,6 +23,8 @@ class Full extends Component {
             <Container fluid>
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
+                <Route path="/valveopen" name="ValveOpen" component={ValveOpen}/>
+                <Route path="/valveclose" name="ValveClose" component={ValveClose}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>

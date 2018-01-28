@@ -2,9 +2,10 @@
   "name": "growapp",
   "version": "1.0.0",
   "scripts": {
+    "postinstall": "cd frontend && npm install",
     "client": "cd frontend && npm start",
     "server": "cd backend && ../node_modules/nodemon/bin/nodemon.js server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "dist": "cd frontend && npm run dist"
   },
   "dependencies": {
