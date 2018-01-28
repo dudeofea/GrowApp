@@ -13,9 +13,7 @@ class Api extends Component {
 
   render() {
     return (
-      <div className="Api">
         {this.state.response}
-      </div>
     )
   }
 
