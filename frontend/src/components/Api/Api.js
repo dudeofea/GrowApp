@@ -13,7 +13,7 @@ class Api extends Component {
 
   render() {
     return (
-        {this.state.response}
+        <span>{this.state.response}</span>
     )
   }
 

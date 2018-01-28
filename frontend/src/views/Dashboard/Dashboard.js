@@ -13,9 +13,9 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        <p>Soil moisture:&nbsp; <Api url="/sensor/soil_moisture"/>&#37;</p>
-        <p>Air humidity:&nbsp; <Api url="/sensor/air_humidity"/>&#37;</p>
-        <p>Ambient temperature:&nbsp; <Api url="/sensor/temperature"/>&deg;C</p>
+        <p>Soil moisture:&nbsp; <Api url="/sensor/soil_moisture"/>&nbsp; &#37;</p>
+        <p>Air humidity:&nbsp; <Api url="/sensor/air_humidity"/>&nbsp; &#37;</p>
+        <p>Ambient temperature:&nbsp; <Api url="/sensor/temperature"/>&nbsp; &deg;C</p>
       </div>
     )
   }
